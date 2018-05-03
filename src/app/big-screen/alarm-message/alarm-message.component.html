@@ -1,0 +1,65 @@
+<div class="alarm-message-cpt">
+  <div class="box8 bigScreenBox" [appScaleBox]="box8">
+    <span class="b1"></span>
+    <span class="b2"></span>
+    <span class="b3"></span>
+    <span class="b4"></span>
+    <div class="content">
+      <div class="tableBo">
+        <ul class="headTb">
+          <li class="l1 clear">
+            <span class="sp1">
+                <i>NO.</i>
+            </span>
+            <span class="sp2">
+                <i>来源</i>
+            </span>
+            <span class="sp3">
+                <i>描述</i>
+            </span>
+            <span class="sp4">
+                <i>级   别</i>
+           </span>
+            <span class="sp5">
+                <i>时间</i>
+              </span>
+            <span class="sp6">
+                <i>提示内容</i>
+              </span>
+            <span class="sp7">
+                <i>confirm</i>
+              </span>
+          </li>
+        </ul>
+        <div class="boxyTb" id="box8">
+          <ul>
+            <li class="top" *ngFor="let item of newAlarmData let i = index">
+            <span class="sp1">
+              <i>{{i+1}}</i>
+            </span>
+              <span class="sp2">
+              <i>{{item.Source}}</i>
+            </span>
+              <span class="sp3">
+              <i>{{item.Message}}</i>
+            </span>
+              <span class="sp4">
+              <i>{{item.Level}}</i>
+            </span>
+              <span class="sp5">
+              <i>{{item.Time}}</i>
+            </span>
+              <span class="sp6">
+              <i>{{item.Message}}</i>
+            </span>
+              <span class="sp7">
+              <i>{{item.UidPath}}</i>
+            </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="minTitle8" [appScaleBox]="minTitle8"></div>
+</div>

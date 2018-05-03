@@ -1,0 +1,158 @@
+<div class="alarm-setting">
+    <h3>
+      报警设置
+    </h3>
+    <div class="dash-bord">
+        <div class="card-block l-t">
+            <h4>拨号设置</h4>
+            <div class="target flex-row">
+                <span class="form-label">目标号码：</span>
+                <div class="flex1">
+                  <nz-tag *ngFor="let tag of phones1; let i = index;"
+                    [nzClosable]="isEditing1"
+                    (nzClose)="phoneDelete(tag)">
+                    {{tag}}
+                  </nz-tag>
+                  <button nz-button *ngIf="!inputVisible&&isEditing1"
+                    [nzSize]="'small'" [nzType]="'dashed'"
+                    (click)="addPhone()">添加号码</button>
+                  <input nz-input #input
+                    *ngIf="inputVisible&&isEditing1" type="text"
+                    [(ngModel)]="inputPhone"
+                    style="width: 88px;"
+                    (blur)="handleInputConfirm()" (keydown.enter)="handleInputConfirm()">
+                </div>
+            </div>
+            <div class="target flex-row">
+                <span class="form-label">目标级别：</span>
+                <div class="flex1">
+                  <span *ngIf="!isEditing1">1</span>
+                  <nz-select *ngIf="isEditing1" style="width: 120px;" [(ngModel)]="target" [nzPlaceHolder]="'报警等级'" nzAllowClear>
+                    <nz-option
+                      [nzLabel]="'option.label'"
+                      [nzValue]="'option'">
+                    </nz-option>
+                  </nz-select>
+                </div>
+            </div>
+            <div class='choose-box'>
+                <nz-radio-group [(ngModel)]="radioValue1">
+                  <label nz-radio [nzValue]="'A'" [nzDisabled]="!isEditing1">
+                    <span [ngClass]='{active:radioValue1=="A"}'>普通综合管理模式</span>
+                  </label>
+                  <label nz-radio [nzValue]="'B'" [nzDisabled]="!isEditing1">
+                    <span [ngClass]='{active:radioValue1=="B"}'>循环轮流换班模式</span>
+                  </label>
+                </nz-radio-group>
+            </div>
+            <div class="btns">
+              <a class="btn" *ngIf="!isEditing1" (click)="isEditing1=true">编辑</a>
+              <a class="btn" *ngIf="isEditing1" (click)="isEditing1=false">确认修改</a>
+            </div>
+        </div>
+        <div class="card-block r-t">
+            <h4>短信设置</h4>
+            <div class="target flex-row">
+                <span class="form-label">目标号码：</span>
+                <div class="flex1">
+                  <nz-input class="flex1" [(ngModel)]="target" [nzPlaceHolder]="'输入内容'" ></nz-input>
+                </div>
+            </div>
+            <div class="target flex-row">
+                <span class="form-label">目标级别：</span>
+                <div class="flex1">
+                    <nz-select style="width: 120px;" [(ngModel)]="target" [nzPlaceHolder]="'报警等级'" nzAllowClear>
+                      <nz-option
+                        [nzLabel]="'option.label'"
+                        [nzValue]="'option'">
+                      </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div class="choose-box">
+                <nz-radio-group [(ngModel)]="radioValue2">
+                    <label nz-radio [nzValue]="'A'" [nzDisabled]="false">
+                      <span [ngClass]='{active:radioValue2=="A"}'>普通综合管理模式</span>
+                    </label>
+                    <label nz-radio [nzValue]="'B'" [nzDisabled]="false">
+                      <span [ngClass]='{active:radioValue2=="B"}'>循环轮流换班模式</span>
+                    </label>
+                </nz-radio-group>
+            </div>
+            <div class="btns">
+                <a class="btn" *ngIf="!isEditing2" (click)="isEditing2=true">编辑</a>
+                <a class="btn" *ngIf="isEditing2" (click)="isEditing2=false">确认修改</a>
+            </div>
+        </div>
+        <div class="card-block l-b">
+            <h4>邮箱设置</h4>
+            <div>
+
+            </div>
+            <div class="btns">
+                <a class="btn" *ngIf="!isEditing3" (click)="isEditing3=true">编辑</a>
+                <a class="btn" *ngIf="isEditing3" (click)="isEditing3=false">确认修改</a>
+            </div>
+        </div>
+        <div class="card-block r-b">
+            <h4>网络短信设置</h4>
+            <div>
+
+            </div>
+            <div class="btns">
+                <a class="btn" *ngIf="!isEditing4" (click)="isEditing4=true">编辑</a>
+                <a class="btn" *ngIf="isEditing4" (click)="isEditing4=false">确认修改</a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-table">
+        <table class='css-table'>
+          <tr>
+            <th>
+              <div class="th">NO.</div>
+            </th>
+            <th>
+              <div class="th">来源</div>
+            </th>
+            <th>
+              <div class="th">描述 </div>
+            </th>
+            <th>
+              <div class="th">级别</div>
+            </th>
+            <th>
+              <div class="th">时间</div>
+            </th>
+            <th>
+              <div class="th">提示内容</div>
+            </th> 
+            <th>
+              <div class="th">confirm</div>
+            </th> 
+          </tr>
+          <tr  *ngFor="let content of tableSourceData">
+              <td>
+                <div class="td">12</div>
+              </td>
+              <td>
+                <div class="td">数据二次处理设备</div>
+              </td>
+              <td>
+                <div class="td">过低警报</div>
+              </td>
+              <td>
+                <div class="td">6</div>
+              </td>
+              <td>
+                <div class="td">2012-12-21 09:09</div>
+              </td>
+              <td>
+                <div class="td">你是傻逼</div>
+              </td>
+              <td>
+                <div class="td">请确认</div>
+              </td>
+          </tr>
+        </table>
+    </div>
+</div>

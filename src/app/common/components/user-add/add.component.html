@@ -1,0 +1,45 @@
+<div class="add-user-cpt">
+  <form nz-form [formGroup]="validateForm">
+    <div nz-form-item>
+      <div nz-form-label>
+        <label nz-form-item-required>账号</label>
+      </div>
+      <div nz-form-control>
+        <nz-input formControlName="name" [nzPlaceHolder]="'请输入'"
+                  [nzSize]="'large'">
+        </nz-input>
+        <div nz-form-explain
+             *ngIf="validateForm.controls.name.dirty&&validateForm.controls.name.hasError('required')">
+          请输入！
+        </div>
+      </div>
+    </div>
+    <div nz-form-item>
+      <div nz-form-label>
+        <label nz-form-item-required>密码</label>
+      </div>
+      <div nz-form-control>
+        <nz-input formControlName="password" [nzType]="'password'"  [nzPlaceHolder]="'请输入'"
+                  [nzSize]="'large'">
+        </nz-input>
+        <div nz-form-explain
+             *ngIf="validateForm.controls.password.dirty&&
+             validateForm.controls.password.hasError('required')">
+          请输入！
+        </div>
+      </div>
+    </div>
+    <div nz-form-item style="margin-top: 30px;">
+      <div nz-form-control class="bentBox">
+        <button class="bt9" nz-button [nzType]="'primary'" [nzSize]="'large'"
+                (click)="save()" style="margin-right: 20px;">
+          确定
+        </button>
+        <button class="bt9" nz-button [nzType]="'default'" [nzSize]="'large'" (click)="rest()">
+          取消
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>

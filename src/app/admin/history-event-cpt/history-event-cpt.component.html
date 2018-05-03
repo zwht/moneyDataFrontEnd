@@ -1,0 +1,132 @@
+<div class="history-event">
+  <h3>
+    历史事件
+  </h3>
+  <div class="dash-bord">
+    <div class="item count-item">
+      <div class="number">
+        {{todayEvent}}
+      </div>
+      <h4>今日事件数</h4>
+    </div>
+    <div class="item count-item">
+      <div class="number">
+        0
+      </div>
+      <h4>今日已处理</h4>
+    </div>
+    <div class="item chart-item">
+        <div class="chanrts-box">
+          <div echarts [options]="chartOption4" class="demo-chart"
+                style="height: 100%; width: 100%;"
+          ></div>
+        </div>
+        <h4>事件级别百分比统计</h4>
+    </div>
+    <div class="item total-item">
+      <div class="number">
+        200
+      </div>
+      <h4>事件总数</h4>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="content-head">
+        <nz-datepicker class="search-input" [nzAllowClear]='false' [(ngModel)]="queryData.BeginTime" [nzPlaceHolder]="'选择开始日期'"></nz-datepicker>
+        <span>-</span>
+        <nz-datepicker class="search-input" [nzAllowClear]='false' [(ngModel)]="queryData.EndTime" [nzPlaceHolder]="'选择结束日期'"></nz-datepicker>
+        <div class="search-input">
+            <nz-select style="width: 180px;" [(ngModel)]="queryData.LevelMatch" [nzPlaceHolder]="'选择事件类别'">
+              <nz-option
+                *ngFor="let option of matchOptions"
+                [nzLabel]="option.label"
+                [nzValue]="option.value"
+                >
+              </nz-option>
+            </nz-select>
+        </div>
+        <div class="search-input">
+            <nz-select style="width: 180px;" [(ngModel)]="queryData.LevelEv" [nzPlaceHolder]="'选择级别'">
+                <nz-option
+                *ngFor="let option of levelOptions"
+                [nzLabel]="option.label"
+                [nzValue]="option.value"
+                >
+                </nz-option>
+            </nz-select>
+        </div>
+        <div class="search-input search-key"><nz-input  [(ngModel)]="queryData.Keyword" [nzPlaceHolder]="'输入关键字进行查询'" ></nz-input></div>
+        <a class='head-btn' (click)="queryClick()">
+          确认查询
+        </a>
+        <a class='head-btn right' (click)="exportTable()">
+          导出文件
+        </a>
+    </div>
+    <p class="label-msg">
+      共{{pagecount}}页{{totalcount}}条符合条件的信息
+    </p>
+    <table class='css-table' id="history-event-table">
+        <tr>
+          <th>
+            <div class="th">编号</div>
+          </th>
+          <th>
+            <div class="th">发生时间</div>
+          </th>
+          <th>
+            <div class="th">来源</div>
+          </th>
+          <th>
+            <div class="th">事件描述</div>
+          </th>
+          <th>
+            <div class="th">级别</div>
+          </th>
+          <th>
+            <div class="th">确认人</div>
+          </th>
+          <th>
+            <div class="th">确认原因</div>
+          </th>
+          <th>
+            <div class="th">确认时间 </div>
+          </th>
+        </tr>
+        <tr *ngIf='tableSourceData.length==0'>
+            <td  colspan="8">
+              <div class="td">暂无数据</div>
+            </td>
+        </tr>
+        <tr  *ngFor="let content of pageData;let i = index">
+            <td>
+              <div class="td">{{(_currentPage-1)*_pageSize+i+1}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[0]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[1]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[2]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[3]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[4]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[5]}}</div>
+            </td>
+            <td>
+              <div class="td">{{content[6]}}</div>
+            </td>
+        </tr>
+      </table>
+    <div class="css-page">
+        <nz-pagination (nzPageIndexChange)="pageChange($event)" [(nzPageIndex)]="_currentPage" [nzPageSize]="_pageSize" [nzTotal]="totalcount" [nzSize]="'small'" nzShowQuickJumper></nz-pagination>
+    </div>
+  </div>
+</div>

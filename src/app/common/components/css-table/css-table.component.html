@@ -1,0 +1,12 @@
+<table class='css-table'>
+  <tr>
+    <th *ngFor="let headItem of tableHead">
+      <div class="th">{{headItem.name}}</div>
+    </th>
+  </tr>
+  <tr  *ngFor="let content of tableDate">
+    <td  *ngFor="let headItem of tableHead">
+        <div class="td">{{content[headItem.key]}}</div>
+    </td>
+  </tr>
+</table>

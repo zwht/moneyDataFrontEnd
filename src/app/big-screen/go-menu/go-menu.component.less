@@ -1,0 +1,24 @@
+@import "../../../assets/css/themes/default";
+.go-menu-cpt{
+  z-index: 10; cursor: pointer;
+  background: url("../../../assets/images/index/title.png");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  &:hover{
+    .menu{ display: block;}
+  }
+  .menu{
+    width: 100%; padding-top: 0.68rem; text-align: center; display: none;
+    >span{ display: inline-block; width: 0.4rem; height: 0.4rem;
+      border-radius: 0.4rem; background: #00a1c6; text-align: center;
+      line-height: 0.4rem; vertical-align: top;
+      &:hover{ background: #32eaea;}
+      i{ font-size: 0.25rem; font-weight: bold;}
+    }
+    .mb2,.mb9{ margin-top: 0.23rem;}
+    .mb3,.mb8{ margin-top: 0.43rem;}
+    .mb4,.mb7{ margin-top: 0.55rem;}
+    .mb5,.mb6{ margin-top: 0.60rem;}
+
+  }
+}

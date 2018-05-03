@@ -1,0 +1,35 @@
+@import "../../../assets/css/themes/default";
+
+.room-box-cpt{ width: 100%; height: 100%;
+  .imgb{ display: inline-block; position: relative;}
+  .til{ position: absolute; width: 100%; text-align: center;
+    color: #88EAFF; font-size: 0.18rem; padding-left: 3.5rem;
+    top:0.6rem;
+    i{ font-size: 0.22rem;}
+    span,i{ vertical-align: middle; margin: 0 0.02rem;}
+  }
+  .toptBox{ height: 52px;position: absolute; line-height: 42px;
+    background: url("../../../assets/images/index/boxC.png");
+    background-size:auto 100%; display: inline-block;
+    span{ color: rgba(0,0,0,0); display: inline-block;
+      padding: 0 0.2rem;}
+    .dw{ color: @white; position: absolute; width: 100%; height: 100%;
+      left: 0; top:0; z-index: 1; cursor: pointer;
+      &:hover{ color: @color3;}
+    }
+    &:before{ content: ""; height: 100%; width: 0.52rem;
+      opacity: 0.8;
+      background: url("../../../assets/images/index/boxL.png");
+      background-size:auto 100%;
+      background-repeat:no-repeat;
+      position: absolute; left: 0; top: 0;
+    }
+    &:after{ content: ""; height: 100%; width: 0.1rem;
+      opacity: 0.8;
+      background: url("../../../assets/images/index/boxr.png");
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+      position: absolute; top: 0; right: 0;
+    }
+  }
+}

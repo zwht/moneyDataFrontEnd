@@ -1,0 +1,31 @@
+<div class="menuCpl" id="menuCpl">
+  
+  
+  <ul class="leftMenu" >
+    <li>
+      <div class="title" >
+        <img [src]="'../../../../assets/images/admin/title.png'" alt="">
+      </div>
+    </li>
+    <li class="menu-item" *ngFor="let item of menu let i=index"
+        [ngClass]="{active:item.active}">
+      <div class="coner-top-left"></div>
+      <div class="coner-top-right"></div>
+      <div class="coner-bottom-left"></div>
+      <div class="coner-bottom-right"></div>
+      <h2 (click)="bigMenu(item)">
+        <span class="menu-icon" [ngClass]="item.classNmae"></span>
+        <span>{{item.name}}</span>
+      </h2>
+    </li>
+    <li class='logo'>
+        <img src="../../../../assets/images/admin/LOGO.png" alt="">
+    </li>
+  </ul>
+  <div class="mainBox" [ngClass]="{menuTopBox:menuLocation}">
+    <div class='back-point'>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

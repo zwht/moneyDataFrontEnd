@@ -1,0 +1,10 @@
+
+<div class="tree" >
+    <div class='root'>
+        <i (click)="hello()" [ngClass]="{'anticon-caret-down':expand}" class="anticon anticon-caret-right"></i>
+        <span (click)="nodeCk()" [ngClass]="{'selected':selectUid==treeData.UidPath}" class="node-name">{{treeData.Name}}</span>
+    </div>
+    <div style="padding-left:12px;" class='children-node' [ngClass]="{'hello':expand}">
+        <app-tree (nodeClick)="subCk($event)" *ngFor="let item of treeData.SubNodes" [selectUid]="selectUid" [treeData]="item"></app-tree>
+    </div>
+</div>

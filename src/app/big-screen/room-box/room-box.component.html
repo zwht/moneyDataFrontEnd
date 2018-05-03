@@ -1,0 +1,30 @@
+<div class="box5 bigScreenBox" [appScaleBox]="box5">
+  <span class="b1"></span>
+  <span class="b2"></span>
+  <span class="b3"></span>
+  <span class="b4"></span>
+  <div class="content" [ngStyle]="{'padding-top':scale.widthScale*100+'px',
+      'padding-bottom':scale.widthScale*30+'px'}">
+    <!--<div echarts [options]="chartOption6" class="demo-chart"
+         style="height: 100%; width: 100%;"
+    ></div>-->
+    <div class="room-box-cpt">
+      <div class="til">
+        <i class="icon iconfont icon-jifangsheshi"></i>
+        <span>{{activeItem.name}}</span>
+      </div>
+      <div class="imgb" [ngStyle]="imgBoxStyle">
+        <img draggable="false" [ngStyle]="imgBoxStyle" src="./assets/images/index/imgb.png" alt="">
+
+        <div class="toptBox" *ngFor="let item of data.list let i = index"
+             [ngStyle]="item.style"
+        >
+          <span>{{item.name}}</span>
+          <span class="dw">{{item.name}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

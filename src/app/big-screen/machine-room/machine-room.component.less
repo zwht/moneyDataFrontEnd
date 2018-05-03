@@ -1,0 +1,58 @@
+@import "../../../assets/css/themes/default";
+.machine-rom-cpt{height: 100%; width: 100%; background: #052651; color: @white;
+  background: radial-gradient(#0527ad 5%,#01092d 95%); /* 标准的语法 */
+  user-select: none;
+  //transform:scale(0.5);
+  .index-box{padding: 30px;  position: relative; height: 100%; width: 100%;
+    background: url("../../../assets/images/index/bgcr.png");
+
+
+
+    .minTitle11{
+      background: url("../../../assets/images/index/minTitle11.png");
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+    }
+  }
+  .box7{ overflow: hidden; padding: 0 0.15rem;
+    /deep/.iScrollVerticalScrollbar{ right: 4px !important;}
+    .content{ }
+    i,span{ vertical-align: middle; color: #598dae; margin-left: 0.06rem;}
+    h2{ height: 0.44rem; font-size: 0.16rem; color: #ccf5ff; text-align: center;
+      line-height: 0.44rem; cursor: pointer;
+    }
+    i{  font-size: 0.2rem;}
+    .item{ width: 50%; float: left;
+    }
+    .active{ background: rgba(89,141,174,0.3);
+      .lis{ display: block;}
+    }
+    li{ margin-bottom: 0.15rem;
+      >div{ background: url("../../../assets/images/index/fkC.png");
+        background-size:100% auto; position: relative;
+        &:before,&:after{ content: ""; position: absolute; width: 100%;
+          height: 0.1rem;}
+        &:before{ top:0; left: 0;
+          background: url("../../../assets/images/index/fkT.png");
+          background-size:100% 100%;
+          background-repeat:no-repeat;
+        }
+        &:after{ bottom:0; left: 0;
+          background: url("../../../assets/images/index/fkB.png");
+          background-size:100% 100%;
+          background-repeat:no-repeat;
+        }
+      }
+    }
+
+    .lis{ display: none;
+      .item{ padding-left: 0.2rem; line-height: 0.5rem;
+        cursor: pointer;
+        &:hover,&.subActive{
+          span,i{color: @white;}
+        }
+      }
+    }
+  }
+
+}

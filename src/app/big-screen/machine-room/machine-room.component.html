@@ -1,0 +1,40 @@
+<div class="machine-rom-cpt">
+  <div class="index-box">
+    <app-title-left></app-title-left>
+    <app-go-menu></app-go-menu>
+    <app-title-right></app-title-right>
+    <router-outlet>
+
+    </router-outlet>
+    <div class="box6 bigScreenBox" [appScaleBox]="box6">
+      <span class="b1"></span>
+      <span class="b2"></span>
+      <span class="b3"></span>
+      <span class="b4"></span>
+      <div class="content"></div>
+    </div>
+    <div class="box7" [appScaleBox]="box7" id="box7">
+      <ul class="content">
+        <li *ngFor="let item of mData let i = index"
+            [class.active]="item.active">
+          <div>
+            <h2 (click)="showM(item)">
+              <i class="icon iconfont icon-jifangsheshi"></i>
+              <span>{{item.name}}</span>
+            </h2>
+            <div class="lis clear">
+              <div class="item" [class.subActive]="subItem.active"
+                   *ngFor="let subItem of item.list let i = index"
+              (click)="goItem(subItem)">
+                <i class="icon iconfont icon-jixieshebei"></i>
+                <span>{{subItem.name}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="minTitle11" [appScaleBox]="minTitle11"></div>
+    <app-alarm-message></app-alarm-message>
+  </div>
+</div>

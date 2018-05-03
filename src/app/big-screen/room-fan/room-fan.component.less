@@ -1,0 +1,53 @@
+@import "../../../assets/css/themes/default";
+
+.room-conditioner-cpt{
+  .imbox{ overflow: hidden;
+    background: url("../../../assets/images/index/fanBg.png");
+    background-size:100% auto; position: relative;
+    background-repeat:no-repeat;
+  }
+  .item{ text-align: center; color: #CCF5FF;
+    b{ position: absolute; display: block; width: 100%; top: 50%;
+      font-size: 0.28rem; line-height: 100%; margin-top: -0.15rem;
+    }
+    p{ position: absolute; bottom: -0.3rem; width: 100%;}
+    img{ width: 100%;}
+  }
+  .til1,.til2{}
+  .til1{ background: url("../../../assets/images/index/fan_03.png");
+    background-size:100% auto; position: relative;
+    background-repeat:no-repeat;}
+  .til2{ background: url("../../../assets/images/index/fan_05.png");
+    background-size:100% auto; position: relative;
+    background-repeat:no-repeat;}
+  @keyframes ss
+  {
+    from {background:rgba(136,234,255,0);transform: scale(0);
+     box-shadow: 0 0 1px rgba(0,0,0,0);
+    }
+    to {background:rgba(136,234,255,0.7);transform: scale(1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+  }
+  @keyframes fg
+  {
+    from {transform: scale(1); border-color: rgba(136,234,255,1);}
+    to {transform: scale(2); border-color: rgba(136,234,255,0);}
+  }
+
+  .fgdh1{ width:0.12rem; height: 0.12rem; border-radius: 0.1rem; background: #88EAFF;
+    position: absolute; top: 0.22rem; right: 0.25rem;;
+    animation:ss 1s infinite;
+    &:after{ content: ""; position: absolute; width: 0.16rem; height: 0.16rem;
+      border: 2px solid #88EAFF; border-radius: 0.16rem; top:-0.02rem;
+      left: -0.02rem; animation:fg 1s infinite;
+    }
+  }
+  .fgdh2{ width:0.12rem; height: 0.12rem; border-radius: 0.1rem; background: rgba(0,0,0,0.3);
+    position: absolute; top: 0.22rem; right: 0.25rem;;
+    &:after{ content: ""; position: absolute; width: 0.16rem; height: 0.16rem;
+      border: 1px solid #88EAFF; border-radius: 0.16rem; top:-0.02rem;
+      left: -0.02rem;
+    }
+  }
+}

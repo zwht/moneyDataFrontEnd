@@ -1,0 +1,67 @@
+@import "../../../assets/css/themes/default";
+
+.room-energy-cpt{ color: #7BE5FF;
+  .imbox{ overflow: hidden;}
+  .titleBox{ color: #fff; font-size: 0.16rem;
+    i{ color: #00e536; font-size: 0.22rem;}
+  }
+  .barFk{ font-size: 0.16rem;
+    .item{ background: rgba(0,0,0,0.3); padding: 0.05rem 0.2rem;
+      height: 11%; width: 100%; border-radius: 1rem;
+      margin-bottom: 5.6%; overflow: visible; line-height: 0.34rem;
+      >div{ float: left;}
+      .text{ width: 20%;}
+      .br{ width: 80%; height: 100%;
+        >div{ float: left;}
+        .b{height: 100%;width: 70%;  position: relative;
+          background: linear-gradient(to right,#0485FF,#00FAFF);
+          .line{ position: absolute; left: 0; top:0; right: 0;
+             overflow: hidden; bottom: 0;
+            i{ display: block; width: 0.03rem; margin-left: 0.06rem;
+              height: 100%; background: #000; float: left;
+            }
+          }
+        }
+        .span{ width: 0;height: 0; position: relative;
+          i{ position: absolute; left: 0.05rem; top:0;}
+        }
+      }
+    }
+  }
+  .til1,.til2{}
+  .til1{ background: url("../../../assets/images/index/fan_03.png");
+    background-size:100% auto; position: relative;
+    background-repeat:no-repeat;}
+  .til2{ background: url("../../../assets/images/index/fan_05.png");
+    background-size:100% auto; position: relative;
+    background-repeat:no-repeat;}
+    @keyframes ss
+    {
+      from {background:rgba(136,234,255,0);transform: scale(0);
+       box-shadow: 0 0 1px rgba(0,0,0,0);
+      }
+      to {background:rgba(136,234,255,0.7);transform: scale(1);
+        box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      }
+    }
+    @keyframes fg
+    {
+      from {transform: scale(1); border-color: rgba(136,234,255,1);}
+      to {transform: scale(2); border-color: rgba(136,234,255,0);}
+    }
+    .fgdh1{ width:0.12rem; height: 0.12rem; border-radius: 0.1rem; background: #88EAFF;
+      position: absolute; top: 0.18rem; right: 0.25rem;;
+      animation:ss 1s infinite;
+      &:after{ content: ""; position: absolute; width: 0.16rem; height: 0.16rem;
+        border: 2px solid #88EAFF; border-radius: 0.16rem; top:-0.02rem;
+        left: -0.02rem; animation:fg 1s infinite;
+      }
+    }
+    .fgdh2{ width:0.12rem; height: 0.12rem; border-radius: 0.1rem; background: rgba(0,0,0,0.3);
+      position: absolute; top: 0.18rem; right: 0.25rem;;
+      &:after{ content: ""; position: absolute; width: 0.16rem; height: 0.16rem;
+        border: 1px solid #88EAFF; border-radius: 0.16rem; top:-0.02rem;
+        left: -0.02rem;
+      }
+    }
+}

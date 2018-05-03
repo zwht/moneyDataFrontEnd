@@ -1,0 +1,226 @@
+
+<div class="box5 bigScreenBox" [appScaleBox]="box5">
+  <span class="b1"></span>
+  <span class="b2"></span>
+  <span class="b3"></span>
+  <span class="b4"></span>
+  <div class="content" [ngStyle]="{'padding-top':scale.widthScale*100+'px',
+      'padding-bottom':scale.widthScale*30+'px'}"></div>
+</div>
+
+<div class="room-ups-cpt">
+  <div class="cpTitle" [appScaleBox]="cpTitle">
+      <span class="til">
+        <i class="icon iconfont icon-jixieshebei"></i>
+        {{activeItem.name}}
+      </span>
+    <span class="tba" [class.active]="active" (click)="showTable(true)">参数展示</span>
+    <span class="tba" [class.active]="!active" (click)="showTable(false)">参数列表</span>
+  </div>
+  <div *ngIf="active">
+    <div class="boxu" [appScaleBox]='cpMain'>
+      <app-instrument-panel [cptData]="ulBok1Obj" [appScaleBox]="ulBok1"
+                            [scaleDiv]="'true'" class="ulBok1 clear"></app-instrument-panel>
+      <app-instrument-panel [cptData]="ulBok2Obj" [appScaleBox]="ulBok2"
+                            [scaleDiv]="'true'" class="ulBok2 clear"></app-instrument-panel>
+      <app-instrument-panel [cptData]="ulBok3Obj" [appScaleBox]="ulBok3"
+                            [scaleDiv]="'true'" class="ulBok3 clear"></app-instrument-panel>
+
+    </div>
+    <div class="cpLeft"  [appScaleBox]='cpLeft'>
+      <div class="tp1 clear">
+        <div class="item">
+          <h3>系统输入频率</h3>
+          <span>100hz</span>
+        </div>
+        <div class="item">
+          <h3>旁路输入频率</h3>
+          <span>100hz</span>
+        </div>
+        <div class="item">
+          <h3>旁路过载超时时间</h3>
+          <span>100s</span>
+        </div>
+      </div>
+      <div class="tiim"></div>
+      <div class="lfDc">
+        <div echarts [options]="chartOption1" class="demo-chart"
+             style="height: 100%; width: 100%;"
+        ></div>
+      </div>
+
+    </div>
+    <div class="cpRight" [appScaleBox]='cpRight'>
+      <div class="tiim tiim1"></div>
+      <div class="tp1 clear">
+        <div class="item">
+          <h3>Uab</h3>
+          <span>100V</span>
+        </div>
+        <div class="item">
+          <h3>Ubc</h3>
+          <span>100V</span>
+        </div>
+        <div class="item">
+          <h3>Uca</h3>
+          <span>100V</span>
+        </div>
+      </div>
+      <div class="tiim tiim2"></div>
+      <div class="lfDc1">
+        <div echarts [options]="chartOption2" class="demo-chart"
+             style="height: 100%; width: 100%;"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!active">
+    <div class="boxu2" [appScaleBox]='cpMain'>
+      <div class="search">
+        <input type="text" placeholder="请输入关键字进行查询">
+        <a class="head-btn">确认查询</a>
+        <span style="float: right">共4页62条符合条件的信息</span>
+      </div>
+      <div class="tableBo">
+        <ul class="headTb">
+          <li class="l1 clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+        </ul>
+        <div class="boxyTb" id="tableIscroll">
+          <ul>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li><li class="clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li><li class="clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li><li class="clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li><li class="clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li><li class="clear">
+            <span class="ta1"><i>编号</i></span>
+            <span class="ta2"><i>数据项</i></span>
+            <span class="ta3"><i>数据项</i></span>
+            <span class="ta4"><i>单位</i></span>
+          </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+            <li class="clear">
+              <span class="ta1"><i>编号</i></span>
+              <span class="ta2"><i>数据项</i></span>
+              <span class="ta3"><i>数据项</i></span>
+              <span class="ta4"><i>单位</i></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="css-page">
+        <nz-pagination (nzPageIndexChange)="pageChange($event)" [(nzPageIndex)]="_currentPage" [nzPageSize]="10" [nzTotal]="totalcount" [nzSize]="'small'" nzShowQuickJumper></nz-pagination>
+      </div>
+
+    </div>
+  </div>
+  <div class="roomBack" [appScaleBox]="back" (click)="backClick()"></div>
+</div>

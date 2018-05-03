@@ -1,0 +1,36 @@
+<div class="addUser viewBox">
+  <div class="zwSearch">
+    <div class="left">
+      <span>{{title}}</span>
+    </div>
+    <div class="right">
+    </div>
+  </div>
+  <div class="viewMain">
+    <div class="addFrom">
+      <div>
+        <span>分类：</span>
+        <nz-select [(ngModel)]="code.type"
+                   [nzPlaceHolder]="'请选择'" nzAllowClear>
+          <nz-option
+              *ngFor="let item of typeList"
+              [nzLabel]="item"
+              [nzValue]="item">
+          </nz-option>
+        </nz-select>
+      </div>
+      <div>
+        <span>名称：</span>
+        <nz-input [(ngModel)]="code.name" [nzSize]="'large'" placeholder="请输入"></nz-input>
+      </div>
+      <div>
+        <span>码值：</span>
+        <nz-input [(ngModel)]="code.value" [nzSize]="'large'" placeholder="请输入"></nz-input>
+      </div>
+      <br>
+      <button (click)="save()" nz-button nzType="primary">保存</button>
+    </div>
+  </div>
+</div>
+
+

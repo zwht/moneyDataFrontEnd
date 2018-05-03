@@ -1,0 +1,131 @@
+<div class="operation-instructions">
+  <h3>
+    运维知识库
+  </h3>
+  <div class="dash-bord">
+    <div class="item count-item">
+      <div class="number">
+        50
+      </div>
+      <h4>今日新增</h4>
+    </div>
+    <div class="item total-item">
+      <div class="number">
+        200
+      </div>
+      <h4>累计记录</h4>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="content-head">
+        <div class="search-input">
+            <nz-select style="width: 180px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'所有字段'">
+                <nz-option
+                  *ngFor="let option of options"
+                  [nzLabel]="option"
+                  [nzValue]="option"
+                  >
+                </nz-option>
+              </nz-select>
+        </div>
+        <div class="search-input search-key"><nz-input  [(ngModel)]="searchKey" [nzPlaceHolder]="'输入关键字进行查询'" ></nz-input></div>
+        <a class='head-btn'>
+          确认查询
+        </a>
+        <a class='head-btn right' (click)="addRule()">
+          增加规则
+        </a>
+        <a class='head-btn right'>
+          导出文件
+        </a>
+    </div>
+    <p class="label-msg">
+      共{{pagecount}}页{{totalcount}}条符合条件的信息
+    </p>
+    <table class='css-table'>
+        <tr>
+          <th>
+            <div class="th">编号</div>
+          </th>
+          <th>
+            <div class="th">sUid</div>
+          </th>
+          <th>
+            <div class="th">日期 </div>
+          </th>
+          <th>
+            <div class="th">关键字</div>
+          </th>
+          <th>
+            <div class="th">知识库</div>
+          </th>
+          <th>
+            <div class="th">操作</div>
+          </th>
+        </tr>
+        <tr  *ngFor="let content of tableSourceData">
+            <td>
+              <div class="td">12</div>
+            </td>
+            <td>
+              <div class="td">用户登陆</div>
+            </td>
+            <td>
+              <div class="td">2018-04-17 19:04:32</div>
+            </td>
+            <td>
+              <div class="td">keyword</div>
+            </td>
+            <td>
+              <div class="td">哈哈哈哈哈哈或或或或或或或或或或或或哈哈哈哈哈哈或或</div>
+            </td>
+            <td>
+              <div class="td">
+                <a (click)="edit(content)">编辑</a>
+              </div>
+            </td>
+        </tr>
+      </table>
+    <div class="css-page">
+        <nz-pagination (nzPageIndexChange)="pageChange($event)" [(nzPageIndex)]="_currentPage" [nzPageSize]="10" [nzTotal]="totalcount" [nzSize]="'small'" nzShowQuickJumper></nz-pagination>
+    </div>
+  </div>
+  <div class="model-mask" *ngIf="modelShow">
+    <div class="model">
+      <span class='close' (click)="modelShow=false">
+          <i class="anticon anticon-close"></i>
+      </span>
+      <!-- head -->
+      <div class="model-head">
+        <h4>{{modelTitle}}</h4>
+      </div>
+      <!-- body -->
+      <div class="model-body">
+            <div class="model-form-item">
+              <span class="form-label">sUid</span>
+              <nz-input  [(ngModel)]="searchKey" [nzPlaceHolder]="'输入内容'" ></nz-input>
+            </div>
+            <div class="model-form-item">
+              <span class="form-label">关键字</span>
+              <nz-input  [(ngModel)]="searchKey" [nzPlaceHolder]="'输入内容'" ></nz-input>
+            </div>
+            <div class="model-form-item">
+              <span class="form-label">知识库</span>
+              <nz-input [(ngModel)]="searchKey" nzType="textarea" [nzAutosize]="{minRows: 4, maxRows: 4}" nzPlaceHolder="输入内容"></nz-input>
+            </div>
+      </div>
+      <!-- foot -->
+      <div class="model-foot" style="text-align:center;">
+          <a class='btn' (click)="modelShow=false">
+            确&nbsp;&nbsp;&nbsp;&nbsp;定
+          </a>
+      </div>
+      <!-- 以下是样式元素不建议编辑 -->
+      <div class="coner-top-left"></div>
+      <div class="coner-top-right"></div>
+      <div class="coner-bottom-left"></div>
+      <div class="coner-bottom-right"></div>
+      <!-- 以上是样式元素不建议编辑 -->
+    </div>
+  </div>
+</div>

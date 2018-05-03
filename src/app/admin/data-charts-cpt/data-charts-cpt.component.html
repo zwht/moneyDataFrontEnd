@@ -1,0 +1,62 @@
+<div class="alarm-setting">
+    <h3>
+      报表管理
+    </h3>
+    <div class="page flex-row">
+      <div class="tree-box">
+        <app-tree *ngIf="orgTreeData"  (nodeClick)="treeNodeClick($event)" [selectUid]="treeSelectUid" [treeData]="orgTreeData" style="color:#fff;"></app-tree>
+      </div>
+      <div class="flex1 main-area">
+          <div class="top">
+              <div class="item" [ngClass]="{'cur':currenClass==1}" >图表显示</div>
+              <div class="item" [ngClass]="{'cur':currenClass==2}">仪表盘</div>
+          </div>
+          <div class="search-box">
+              <nz-datepicker class="search-input" [nzAllowClear]='false' [(ngModel)]="queryData.Begintime" [nzPlaceHolder]="'选择开始日期'"></nz-datepicker>
+              <div class="search-input">
+                <!-- DtTp -->
+              </div>
+              <a class='head-btn' (click)="queryClick()">
+                确认查询
+              </a>
+              <a class='head-btn right' (click)="exportTable()">
+                保存图表
+              </a>
+          </div>
+          <div class="chart-model">
+              <div class='model-item cur'>
+                <img src="../../../assets/images/table.png" alt="">
+              </div>
+              <div class='model-item'>
+                <img src="../../../assets/images/bar.png" alt="">
+              </div>
+              <div class='model-item'>
+                <img src="../../../assets/images/line.png" alt="">
+              </div>
+              <div class='model-item'>
+                <img src="../../../assets/images/pie.png" alt="">
+              </div>
+          </div>
+          <div class="table">
+            <table class='css-table' id="history-event-table">
+              <tr>
+                <th *ngFor="let head of tableHead">
+                  <div class="th">{{head}}</div>
+                </th>
+              </tr>
+              <tr *ngIf='tableSourceData.length==0'>
+                  <td  colspan="8">
+                    <div class="td">暂无数据</div>
+                  </td>
+              </tr>
+              <tr  *ngFor="let content of tableSourceData;let i = index">
+                  <td  *ngFor="let item of content;let i = index">
+                    <div class="td">{{item}}</div>
+                  </td>
+              </tr>
+            </table>
+          </div>
+      </div>
+    </div>
+</div>
+

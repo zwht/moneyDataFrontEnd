@@ -1,0 +1,145 @@
+.alarm-setting{
+    padding-right:22px; 
+    padding-left:10px;
+    color:#fff;
+    overflow: hidden;
+    // position: relative;
+    h3{
+        color: #fff;
+        margin-top:26px;
+        margin-bottom:26px;
+        font-size: 20px;
+        padding-left: 36px;
+        background: url(../../../assets/images/admin/icon/jbsz.svg) no-repeat 3px center;
+    }
+    .dash-bord{
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 4px;
+        width: 1558px;
+        height: 700px;
+        overflow: auto;;
+        padding:20px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            // height: 50px;
+          }
+        &::-webkit-scrollbar-thumb {
+            background-color:rgb(101,185,222);
+            border-radius: 5px;
+        }
+        .card-block{
+            margin-top: 20px;
+            position: relative;
+            height: 320px;
+            background-color: rgba(0,0,0,0.2);
+            h4 {
+                height: 35px;
+                background: linear-gradient(to right, rgba(34, 113, 222, 1),rgba(0, 73, 173, 1));
+                line-height: 35px;
+                font-size: 16px;
+                text-align: center;
+                color:#fff;
+            }
+            .target{
+                padding:12px 10px;
+                line-height: 30px;
+                .form-label{
+                    width: 100px;
+                    text-align: right;
+                }
+                /deep/.ant-btn-dashed {
+                    color: rgba(255,255,255, 0.65);
+                    background-color: transparent;
+                    border-color: #d9d9d9;
+                    border-style: dashed;
+                }
+                /deep/.ant-tag{
+                    background: rgba(0,0,0,0.6);
+                    color: RGBA(204, 245, 255, 1);
+                    height: 22px;
+                    border:0;
+                    line-height: 20px;
+                    border-radius: 4px;
+                } 
+                /deep/.ant-select-arrow{
+                    color:#f0f0f0;
+                }
+                /deep/.ant-select-selection{
+                    background: rgba(0,0,0,0.2);
+                    border:0;
+                    color: RGBA(204, 245, 255, 1);
+                }
+                /deep/.ant-input{
+                    background: rgba(0,0,0,0.2);
+                    border:0;
+                    color: RGBA(204, 245, 255, 1);
+                }
+                /deep/.ant-calendar-picker-icon:after{
+                    color:rgb(16,204,249);
+                }
+                /deep/.ant-calendar-picker-clear{
+                    background:rgb(14,47,121);
+                    color:red ;
+                }
+                /deep/.ant-calendar-picker-clear:before{
+                    content: "\E62F"
+                }
+            }
+            .btns{
+                position: absolute;
+                padding: 12px 0;
+                bottom:0;
+                width: 100%;
+                text-align: center;
+            }
+            .choose-box{
+                .active{
+                    color:#46DAFF;
+                }
+                text-align: center;
+                /deep/.ant-radio-disabled + span {
+                    color:rgba(240,240,240,0.4);
+                }
+                /deep/ .ant-radio-inner{
+                    background-color: transparent;
+                }
+                /deep/.ant-radio-checked .ant-radio-inner{
+                    border-color: #46DAFF !important;
+                }
+                /deep/.ant-radio-inner:after{
+                    width: 8px;
+                    height: 8px;
+                    left: 2px;
+                    top: 2px;
+                    background-color: #46DAFF;
+                }
+            }
+        }
+    }
+    .bottom-table{
+        border-radius: 4px;
+        margin-top:20px;
+        padding:20px;
+        background-color: rgba(0,0,0,0.2);
+    }
+    .btn{
+        height: 36px;
+        vertical-align: middle;
+        width: 160px;
+        display: inline-block;
+        font-size: 12px;
+        background: url(../../../assets/images/admin/btn.svg) no-repeat center center;
+        background-size: 192px;
+        text-align: center;
+        line-height: 36px;
+        color:RGBA(204, 245, 255, 1);
+        &:hover{
+            color:#172A88;
+            background-image: url(../../../assets/images/admin/btn_hover.svg);
+        }
+        &.right{
+            float:right;
+        }
+    }
+
+}

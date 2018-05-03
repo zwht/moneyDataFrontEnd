@@ -1,0 +1,101 @@
+<div class="userList viewBox">
+  <div class="zwSearch">
+
+  </div>
+  <div class="mBox" [ngStyle]="{height:windHeight+'px'}">
+    <div class="left">
+      <button (click)="addDep()" class="bto" nz-button="" [nzSize]="'large'">
+        <i class="anticon anticon-plus"></i>
+        新增部门
+      </button>
+      <ul class="menb">
+        <li [class.active]="item.active" (click)="changeMenu(item)" *ngFor="let item of depList let i = index">
+          <i *ngIf="!item.id" class="anticon anticon-caret-down"></i>
+          <i *ngIf="!item.id" class="icon iconfont icon-gongsixinxi"></i>
+          <i *ngIf="item.id" class="anticon anticon-caret-right"></i>
+          <span>{{item.name}}</span>
+          <!--<i class="anticon anticon-edit"></i>-->
+          <nz-popconfirm [nzTitle]="'确定要删除吗？'" *ngIf="item.id"
+                         (nzOnConfirm)="deleteDep(item)"
+                         [nzPlacement]="'right'">
+            <i nz-popconfirm class="anticon anticon-delete" (click)="$event.stopPropagation()"></i>
+          </nz-popconfirm>
+
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>
+        <span>机构成员</span>
+        <button (click)="addUser()" class="bto" nz-button="" [nzSize]="'large'">
+          <i class="anticon anticon-plus"></i>
+          新增成员
+        </button>
+      </h2>
+      <div class="tabBox">
+        <nz-table #nzTable [nzAjaxData]="list"
+                  nzShowSizeChanger
+                  [nzLoading]="loading"
+                  [(nzPageSize)]="pageSize"
+                  [nzTotal]="total"
+                  [(nzPageIndex)]="pageNum"
+                  (nzDataChange)="dataChange($event)"
+                  (nzPageIndexChange)="getList()"
+                  (nzPageSizeChange)="getList()">
+          <thead nz-thead>
+          <tr>
+            <th nz-th nzCheckbox class="selBo">
+              <label nz-checkbox [(ngModel)]="_allChecked"
+                     (ngModelChange)="_checkAll($event)">
+              </label>
+              <div class="selAll" *ngIf="selectUserList.length">
+                <span>已选择
+                  <b>{{selectUserList.length}}</b>
+                  位成员</span>
+                <span class="clk" (click)="moveItem()">
+                  <i class="icon iconfont icon-yidong"></i>
+                  <span>移动</span>
+                </span>
+                <nz-popconfirm class="clk" [nzTitle]="'确定要删除吗？'"
+                               (nzOnConfirm)="delListUser()"
+                               [nzPlacement]="'top'">
+                    <span nz-popconfirm>
+                       <i class="icon iconfont icon-shanchu"></i>
+                      <span>删除</span>
+                    </span>
+                </nz-popconfirm>
+              </div>
+            </th>
+            <th nz-th><span>成员</span></th>
+            <th nz-th><span>账号</span></th>
+            <th nz-th><span>角色</span></th>
+            <th nz-th class="btn-box"><span>操作</span></th>
+          </tr>
+          </thead>
+          <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of list">
+            <td nz-td nzCheckbox>
+              <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+              </label>
+            </td>
+            <td nz-td>{{data.name}}</td>
+            <td nz-td>{{data.userAccount}}</td>
+            <td nz-td>{{data.roleName}}</td>
+            <td nz-td class="btn-box">
+              <i (click)="addUser(data)" class="icon iconfont icon-zhongmingming"></i>
+              <i (click)="moveItem(data)" class="icon iconfont icon-yidong"></i>
+              <nz-popconfirm [nzTitle]="'确定要删除吗？'"
+                             (nzOnConfirm)="deleteUser(data.id)"
+                             [nzPlacement]="'left'">
+                <i nz-popconfirm class="icon iconfont icon-shanchu"></i>
+              </nz-popconfirm>
+            </td>
+          </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

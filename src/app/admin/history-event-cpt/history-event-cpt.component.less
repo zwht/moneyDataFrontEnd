@@ -1,0 +1,205 @@
+.history-event{
+    padding-right:22px; 
+    padding-left:10px;
+    color:#fff;
+    overflow: hidden;
+    h3{
+        color: #fff;
+        margin-top:26px;
+        margin-bottom:26px;
+        font-size: 20px;
+        padding-left: 36px;
+        background: url(../../../assets/images/admin/icon/lssj.svg) no-repeat 3px center;
+    }
+    .dash-bord{
+        background-color: rgba(0,0,0,0.2);
+        height: 122px;
+        border-radius: 4px;
+        display: flex;
+        .item{
+            flex: 1;
+            text-align: center;
+        }
+        .total-item{
+            .number{
+                height: 40px;
+                line-height: 40px;
+                font-size: 26px;
+                font-weight: 900;
+                margin-top:26px;
+            }
+            h4{
+                margin-top:0px;
+                vertical-align: top;
+                line-height: 40px;
+                display: inline-block;
+                color:#fff;
+                font-size:20px;
+            }
+        }
+        .count-item{
+            .number{
+                display: inline-block;
+                height: 80px;
+                width: 80px;
+                line-height: 80px;
+                font-size:26px;
+                vertical-align: top;
+                font-weight: 900;
+                margin-top:20px;
+                background: url(../../../assets/images/admin/circle_bg.svg) center no-repeat;
+                background-size: 140px;
+            }
+            h4{
+                margin-top:20px;
+                vertical-align: top;
+                line-height: 80px;
+                display: inline-block;
+                color:#fff;
+                font-size: 18px;
+            }
+        }
+        .chart-item{
+            position: relative;
+            .chanrts-box{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+            }
+            h4{
+                position: absolute;
+                right:10px;
+                z-index: 0;
+                color:#fff;
+                top:40px;
+                font-size: 18px;
+            }
+        }
+    }
+    .main-content{
+        margin-top:20px;
+        background-color: rgba(0,0,0,0.2);
+        min-height: 300px;
+        border-radius: 4px;
+        padding:20px;
+        .content-head{
+            .search-input{
+                display: inline-block;
+                width: 180px;
+                /deep/.ant-select-arrow{
+                    color:#f0f0f0;
+                }
+                /deep/.ant-select-selection{
+                    background: rgba(0,0,0,0.2);
+                    border:0;
+                    color: #f0f0f0;
+                }
+                /deep/.ant-input{
+                    background: rgba(0,0,0,0.2);
+                    border:0;
+                    color: #f0f0f0;
+                }
+                /deep/.ant-calendar-picker-icon:after{
+                    color:rgb(16,204,249);
+                }
+                /deep/.ant-calendar-picker-clear{
+                    background:rgb(14,47,121);
+                    color:red ;
+                }
+                /deep/.ant-calendar-picker-clear:before{
+                    content: "\E62F"
+                }
+            }
+            .search-key{
+                width: 300px;
+            }
+            .head-btn{
+                height: 36px;
+                vertical-align: middle;
+                width: 160px;
+                display: inline-block;
+                font-size: 14px;
+                background: url(../../../assets/images/admin/btn.svg) no-repeat center center;
+                background-size: 192px;
+                text-align: center;
+                line-height: 36px;
+                color:RGBA(204, 245, 255, 1);
+                &:hover{
+                    color:#172A88;
+                    background-image: url(../../../assets/images/admin/btn_hover.svg);
+                }
+                &.right{
+                    float:right;
+                }
+            }
+        }
+        .label-msg{
+            margin-top:12px;
+            color:RGBA(175, 239, 255, 1);
+            text-align: right;
+        }
+        .css-page{
+            padding:12px 0;
+            /deep/.ant-pagination{
+                text-align: center;
+            }
+            /deep/.ant-pagination-item-link{
+                color:#a0a0a0;
+                background-color: transparent;
+            }
+            /deep/.ant-pagination-item-link:hover{
+                color:rgb(121,228,255);
+            }
+            /deep/.ant-pagination-item{
+                color:#a0a0a0;
+                background-color: transparent;
+            }
+            /deep/.ant-pagination-item a{
+                color:#a0a0a0;
+            }
+            /deep/.ant-pagination-options-quick-jumper input{
+                color:#f0f0f0;
+                background-color: rgba(0,0,0,0.6);
+                border-color:rgba(0,0,0,0.6);
+            }
+            /deep/.ant-pagination-options-quick-jumper input:focus{
+                box-shadow: 0 0 0 2px rgba(255, 255, 220, 0.26);
+            }
+            /deep/.ant-pagination-item a:hover{
+                color:rgb(121,228,255);
+            }
+            /deep/.ant-pagination-jump-prev:after{
+                font-family: "anticon";
+                content: "\e620\e620";
+                color: #a0a0a0;
+                display: inline-block;
+                font-size: 12px;
+                transform: scale(0.66666667) rotate(0deg);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+                zoom: 1;
+                letter-spacing: -1px;
+            }
+            /deep/.ant-pagination-jump-next:after{
+                font-family: "anticon";
+                content: "\e61f\e61f";
+                color: #a0a0a0;
+                display: inline-block;
+                font-size: 12px;
+                transform: scale(0.66666667) rotate(0deg);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+                zoom: 1;
+                letter-spacing: -1px;
+            }
+            /deep/.ant-pagination-jump-prev:hover:after{
+                color: rgb(121,228,255);
+            }
+            /deep/.ant-pagination-jump-next:hover:after{
+                color: rgb(121,228,255);
+            }
+            /deep/.ant-pagination-item-active a, .ant-pagination-item-active:focus a, .ant-pagination-item-active a:hover{
+                color:#FFF;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import "../../../assets/css/themes/default";
+.userList{
+
+  .mBox{ min-height: 500px; box-shadow: 0 0 5px rgba(0,0,0,0.2); border-radius: 4px;
+    background: @white;
+    .left{ width: 280px; float: left; height: 100%; border-right: 1px solid @borderColor;
+      position: relative; padding-top: 80px;
+      .bto{ position: absolute; left: 20px;
+      top:24px;}
+      .menb{
+        li{ height: 50px; line-height: 50px; padding: 0 20px; cursor: pointer !important;
+          font-size: 14px; position: relative;
+          .anticon-delete{ display: none; position: absolute; right:20px; top:19px;
+            cursor: pointer; font-size: 16px;
+          }
+          &:hover{ background: lighten(@color1,20%); color: @white;
+            i{ color: @white;}
+            .anticon-delete{ display: inline-block;}
+          }
+          &.active{background: @color1; color: @white;
+            i{ color: @white;}
+          }
+          .anticon-caret-right{ margin-left: 15px;}
+
+        }
+        i{ color: @color7;}
+      }
+    }
+    .right{ width: 920px; float: left; height: 100%; overflow-y: auto;
+      h2{ height: 80px; line-height: 22px; padding: 24px 20px;
+        span{ font-size: 18px;}
+        .bto{ float: right;}
+      }
+      .tabBox{ position: relative;
+        .btn-box{ text-align: center; width: 150px;
+          i{ margin: 0 10px; cursor: pointer;}
+        }
+        .selBo{ position: relative;
+          .selAll{ position: absolute; width: 840px; left: 50px; z-index: 10;
+            background: #F7F7F7; top:0; height: 100%; text-align: left;
+            padding: 14px 0; line-height: 24px;
+            >span{ margin: 0 10px;}
+            b{ color: @color1;}
+            span,i{vertical-align: middle;}
+            .clk{ cursor: pointer;
+              &:hover{ color: @color3;}
+            }
+
+          }
+        }
+      }
+
+
+    }
+    .bto{ width: 240px; color: #848F99;}
+  }
+}

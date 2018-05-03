@@ -1,0 +1,78 @@
+<div class="detailComponent viewBox">
+  <div class="zwSearch">
+    <div class="left">
+      <span>{{title}}</span>
+    </div>
+    <div class="right">
+    </div>
+  </div>
+  <div class="viewMain">
+    <div class="deatlBox">
+      <div>
+        <span>头&nbsp;&nbsp;&nbsp;&nbsp;像：</span>
+        <app-cropper-img [cpImg]="data.photoUrl" [boxStyle]="{width:100,height:100}"
+                         (saveEnd)="imageChange($event)"></app-cropper-img>
+      </div>
+      <div>
+        <span>用户名：</span>
+        <b>{{data.name}}</b>
+        <a style="float: right;" class="b" (click)="isVisible=true">修改密码</a>
+      </div>
+      <div>
+        <span>性&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+        <nz-radio-group [(ngModel)]="data.gender">
+          <label nz-radio [nzValue]="0">
+            <span>男</span>
+          </label>
+          <label nz-radio [nzValue]="1">
+            <span>女</span>
+          </label>
+        </nz-radio-group>
+      </div>
+      <div>
+        <span>所&nbsp;&nbsp;&nbsp;&nbsp;属：</span>
+        <b>{{data.departmentName}}</b>
+      </div>
+      <div>
+        <span>联系方式：</span>
+        <nz-input [(ngModel)]="data.mobile"
+                  [nzSize]="'large'" placeholder="请输入"></nz-input>
+      </div>
+      <div>
+        <span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</span>
+        <nz-input [(ngModel)]="data.email"
+                  [nzSize]="'large'" placeholder="请输入"></nz-input>
+      </div>
+      <div style="text-align: center;">
+        <br>
+        <button style="width: 100px; border-radius: 20px;" (click)="update()"
+                nz-button nzType="primary">保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+      </div>
+    </div>
+    <nz-modal [nzVisible]="isVisible" [nzTitle]="'修改密码'" [nzContent]="modalContent"
+              (nzOnCancel)="isVisible=false" (nzOnOk)="save()">
+      <ng-template #modalContent>
+        <div class="deatlBox">
+          <div>
+            <span>旧密码：</span>
+            <nz-input [(ngModel)]="user.password" [nzType]="'password'"
+                      [nzSize]="'large'" placeholder="请输入"></nz-input>
+          </div>
+          <div>
+            <span>新密码：</span>
+            <nz-input [(ngModel)]="user.newPassword" [nzType]="'password'"
+                      [nzSize]="'large'" placeholder="请输入"></nz-input>
+          </div>
+          <div>
+            <span>再次输入：</span>
+            <nz-input [(ngModel)]="user.rPassword" [nzType]="'password'"
+                      [nzSize]="'large'" placeholder="请输入"></nz-input>
+          </div>
+        </div>
+      </ng-template>
+    </nz-modal>
+
+
+
+  </div>
+</div>s

@@ -1,0 +1,183 @@
+@import "../../../../assets/css/themes/default";
+.menuCpl{ height: 100%; display: flex;flex-flow: row wrap;font-size:16px;
+  .leftMenu{ width: 320px;
+    background: linear-gradient(to bottom,rgb(1,139,187), rgb(15,32,136));
+    background: -webkit-linear-gradient(to bottom, rgb(1,139,187), rgb(15,32,136)); /* Safari 5.1 - 6.0 */
+    background: -moz-linear-gradient(to bottom, rgb(1,139,187), rgb(15,32,136)); /* Firefox 3.6 - 15 */
+    color: @menuText;
+    height: 100%;/*写给不支持calc()的浏览器*/
+    // height:-moz-calc(~"100% - 50px");
+    // height:-webkit-calc(~"100% - 50px");
+    // height: calc(~"100% - 50px");
+    overflow-y: auto;
+    position: relative;
+    .title{
+      height:40px;
+      margin:20px 0 12px;
+      font-size: 18px;
+      img{
+        display: block;
+        margin:30px auto;
+        width: 240px;
+      }
+    }
+    .logo{
+      display: block;
+      position: absolute;
+      bottom:0px;
+      width: 310px;
+      height: 300px;
+      background: url(../../../../assets/images/admin/bg_left.png) no-repeat;
+      background-size: 100% 100%;
+      opacity: 0.8;
+      img{
+        width: 150px;
+        position: absolute;
+        bottom:40px;
+        left:50px;
+      }
+    }
+    >li.menu-item{
+      position: relative;
+      margin:6px 15px;
+      background-color: rgba(30,31,32,0.09);
+      box-shadow: inset 0px 0px 6px 1px rgba(255,255,255,0.4);
+      >h2{ display: inline-block;padding:0 15px; line-height: 50px;
+        font-size: 16px;
+        background: none; width: 100%; cursor: pointer;
+        color:rgba(255,255,255,0.7);
+        position: relative;
+        padding-left:30px;
+        .menu-icon{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin:0 6px;
+            background: no-repeat center center;
+            background-size: 20px;
+            vertical-align: text-bottom;
+            &.dlll{
+              background-image: url(../../../../assets/images/admin/icon/dlll.svg)
+            }
+            &.zldyll{
+              background-image: url(../../../../assets/images/admin/icon/zldyll.svg)
+            }
+            &.lssj{
+              background-image: url(../../../../assets/images/admin/icon/lssj.svg)
+            }
+            &.czrj{
+              background-image: url(../../../../assets/images/admin/icon/czrj.svg)
+            }
+            &.jbsz{
+              background-image: url(../../../../assets/images/admin/icon/jbsz.svg)
+            }
+            &.ywzsk{
+              background-image: url(../../../../assets/images/admin/icon/ywzsk.svg)
+            }
+            &.zcxxgl{
+              background-image: url(../../../../assets/images/admin/icon/zcxxgl.svg)
+            }
+            &.bbgl{
+              background-image: url(../../../../assets/images/admin/icon/bbgl.svg)
+            }
+            &.jngl{
+              background-image: url(../../../../assets/images/admin/icon/jngl.svg)
+            }
+            &.sjl{
+              background-image: url(../../../../assets/images/admin/icon/sjl.svg)
+            }
+        }
+
+      }
+      &.active h2{ color: @menuText;}
+      &:hover{
+        background-color: rgba(255,255,255,0.1);
+      }
+      &.active{
+        h2{
+          
+          color:rgba(255,255,255,1);
+        }
+        background-color: rgba(255,255,255,0.2);
+      }
+      .coner-top-left{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top:0;
+        left:0;
+        border-top:2px solid rgba(255,255,255,0.32);
+        border-left:2px solid rgba(255,255,255,0.32);
+      }
+      .coner-top-right{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top:0;
+        right:0;
+        border-top:2px solid rgba(255,255,255,0.32);
+        border-right:2px solid rgba(255,255,255,0.32);
+      }
+      .coner-bottom-left{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        bottom:0;
+        left:0;
+        border-bottom:2px solid rgba(255,255,255,0.32);
+        border-left:2px solid rgba(255,255,255,0.32);
+      }
+      .coner-bottom-right{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        bottom:0;
+        right:0;
+        border-bottom:2px solid rgba(255,255,255,0.32);
+        border-right:2px solid rgba(255,255,255,0.32);
+      }
+    }
+    .child{overflow: hidden; display: block; position: relative;
+      transition: height 1s; -moz-transition: height 1s;
+      -webkit-transition: height 1s; -o-transition: height 1s;
+      li{
+        >span{display: inline-block;padding-left: 40px; line-height: 34px; width: 100%;
+          cursor: pointer; color:lighten(@menuText,50%);
+        }
+        &.active{
+          >span{ color: @menuText; border-right: 3px solid @menuActiveBg;}
+        }
+      }
+    }
+  }
+  >.mainBox {
+    /*background: url(../../../../assets/images/sky-bg.jpg) no-repeat 50%;
+    background-size: cover;*/
+    height: 100%; /*写给不支持calc()的浏览器*/
+    // height: -moz-calc(~"100% - 50px");
+    // height: -webkit-calc(~"100% - 50px");
+    // height: calc(~"100% - 50px");
+    width: 100%; /*写给不支持calc()的浏览器*/
+    width: -moz-calc(~"100% - 320px");
+    width: -webkit-calc(~"100% - 320px");
+    width: calc(~"100% - 320px");
+    overflow-y: auto;
+    background: linear-gradient(to bottom,rgb(27,94,210), rgb(5,10,125));
+    .back-point{
+      height: 100%; /*写给不支持calc()的浏览器*/
+      width: 100%; /*写给不支持calc()的浏览器*/
+      padding-left: 10px;
+      background: url(../../../../assets/images/admin/back-point.png);
+      background-size: 24px;
+    }
+  }
+  >.menuTopBox{
+    width: 100%; /*写给不支持calc()的浏览器*/
+    width: -moz-calc(~"100% - 0");
+    width: -webkit-calc(~"100% - 0px");
+    width: calc(~"100% - 0px");
+  }
+}
+
+
+

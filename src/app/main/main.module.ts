@@ -16,6 +16,7 @@ import {EventService} from '../common/service/event.service';
 
 import {BigScreenModule} from '../big-screen/big-screen.module';
 import {IndexComponent} from './component/index/index.component';
+import { DashboardModule } from '../dashboard/dashboard.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {IndexComponent} from './component/index/index.component';
     HttpModule,
     SharedModule,
     BigScreenModule,
+    DashboardModule,
     RouterModule.forRoot([
       {
         path: 'admin',

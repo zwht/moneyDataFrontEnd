@@ -17,8 +17,8 @@ export class HttpServer {
           if (urlArr.includes(':' + p)) {
             new_url = new_url.replace(':' + p, params[p]);
           } else {
-            const tag = str ? '' : '?';
-            str += tag + p + '=' + params[p] + ';';
+            const tag = str ? '&' : '?';
+            str += tag + p + '=' + params[p];
           }
         }
         new_url = new_url.split('/').filter(i => i[0] !== ':').join('/') + str;

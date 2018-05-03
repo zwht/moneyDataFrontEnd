@@ -29,6 +29,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
 import {BigScreenService} from './restService/big-screen-service';
 import {AdminService} from './restService/admin-service';
 import { TreeComponent } from './components/tree/tree.component';
+import { DashboardService } from './restService/dashboard-service';
 
 @NgModule({
   imports: [
@@ -81,7 +82,8 @@ import { TreeComponent } from './components/tree/tree.component';
     ScaleService,
     FileService,
     BigScreenService,
-    AdminService
+    AdminService,
+    DashboardService
   ],
   entryComponents: [
     CropperImgModalComponent,
